@@ -47,10 +47,6 @@ library(tidytext)
 
 
 
-
-
-
-
 ## Extract Tweets 
 
 
@@ -58,7 +54,7 @@ library(tidytext)
 
 
 Health_India = searchTwitter('from:@MoHFW_INDIA', 1000, lang = 'en', 
-                             since = '2020-03-12', until = '2020-04-12')
+                             since = '2020-03-12', until = '2020-04-14')
 
 
 Health_India = do.call('rbind', lapply(Health_India, as.data.frame))
@@ -68,8 +64,8 @@ View(Health_India)
 
 ## 2. The Times of India; @timesofindia : India News
 
-TOI = searchTwitter('from:@timesofindia', 2000, lang = 'en', 
-                    since = '2020-03-12', until = '2020-04-12')
+TOI = searchTwitter('from:@timesofindia', 3000, lang = 'en', 
+                    since = '2020-03-12', until = '2020-04-14')
 
 
 TOI = do.call('rbind', lapply(TOI, as.data.frame))
@@ -81,7 +77,7 @@ View(TOI)
 
 
 CNN = searchTwitter('from:@CNN', 2000, lang = 'en', 
-                    since = '2020-03-12', until = '2020-04-12')
+                    since = '2020-03-12', until = '2020-04-14')
 
 
 CNN = do.call('rbind', lapply(CNN, as.data.frame))
@@ -93,7 +89,7 @@ View(CNN)
 
 
 BBC = searchTwitter('from:@BBCNews', 1000, 
-                    since = '2020-03-12', until = '2020-04-12')
+                    since = '2020-03-12', until = '2020-04-14')
 
 
 BBC = do.call('rbind', lapply(BBC, as.data.frame))
@@ -170,7 +166,7 @@ library(quanteda)
 
 # For Ministry of Health India
 
-health_Dfm = dfm(as.character(Health_India$text), 
+health_Dfm = dfm(as.character(Health_India$text), keep = c("#*"), 
             remove = c("amp", "rt", "https", "t.co", "will", "@MoHFW_INDIA", ":", '.', ',', ';', '-', '&','.',
                        remove_numbers = TRUE, 
                        remove_punct = TRUE,
@@ -189,7 +185,7 @@ textplot_wordcloud(health_Dfm, min.freq = 5, max_words = 500, random.order = FAL
 ## FOr Times Of India 
 
 
-toi_Dfm = dfm(as.character(TOI$text), 
+toi_Dfm = dfm(as.character(TOI$text), keep = c("#*"),
                  remove = c("amp", "rt", "https", "t.co", "will", "@timesofindia", ":", '.', ',', ';', '-', '&','.',
                             remove_numbers = TRUE, 
                             remove_punct = TRUE,
@@ -207,8 +203,8 @@ textplot_wordcloud(toi_Dfm, min.freq = 5, max_words = 500, random.order = FALSE,
 ## For CNN News
 
 
-cnn_Dfm = dfm(as.character(CNN$text), 
-              remove = c("amp", "rt", "https", "t.co", "will", "@CNN", ":", '.', ',', ';', '-', '&','.',
+cnn_Dfm = dfm(as.character(CNN$text), keep = c("#*"),
+              remove = c("amp", "rt", "https", "t.co", "will", "@CNN", ":", '.', ',', ';', '-', '&','.', '"',
                          remove_numbers = TRUE, 
                          remove_punct = TRUE,
                          stem = TRUE,
@@ -225,8 +221,8 @@ textplot_wordcloud(cnn_Dfm, min.freq = 5, max_words = 500, random.order = FALSE,
 ## FOr BBC News
 
 
-bbc_Dfm = dfm(as.character(BBC$text), 
-              remove = c("amp", "rt", "https", "t.co", "will", "@BBCNews", ":", '.', ',', ';', '-', '&','.', '"',
+bbc_Dfm = dfm(as.character(BBC$text), keep = c("#*"),
+              remove = c("amp", "rt", "https", "t.co", "will", "@BBCNews", ":", '.', ',', ';', '-', '&','.', '"', "'",
                          remove_numbers = TRUE, 
                          remove_punct = TRUE,
                          stem = TRUE,
@@ -274,7 +270,7 @@ health_senti = get_nrc_sentiment(health_text)
 barplot(sort(colSums(prop.table(health_senti[, 1:10]))), 
          cex.names = 0.7, 
          las = 1, 
-         main = "Ministry of Health Tweet Sentiment Analysis", xlab="Percentage")
+         main = "Ministry of Health Tweet Sentiment Analysis", xlab="Percentage", col = 'seagreen')
 
 
 
@@ -302,10 +298,10 @@ toi_senti = get_nrc_sentiment(toi_text)
 
 # Bar Plot
 
-barplot(sort(colSums(prop.table(toi_text[, 1:10]))), 
+barplot(sort(colSums(prop.table(toi_senti[, 1:10]))), 
         cex.names = 0.7, 
         las = 1, 
-        main = "The Times of India Tweet Sentiment Analysis", xlab="Percentage")
+        main = "The Times of India Tweet Sentiment Analysis", xlab="Percentage", col = 'coral')
 
 
 
@@ -332,10 +328,10 @@ cnn_senti = get_nrc_sentiment(cnn_text)
 
 # Bar Plot
 
-barplot(sort(colSums(prop.table(cnn_text[, 1:10]))), 
+barplot(sort(colSums(prop.table(cnn_senti[, 1:10]))), 
         cex.names = 0.7, 
         las = 1, 
-        main = "CNN News Tweet Sentiment Analysis", xlab="Percentage")
+        main = "CNN News Tweet Sentiment Analysis", xlab="Percentage", col = 'cornflowerblue')
 
 
 
@@ -363,10 +359,10 @@ bbc_senti = get_nrc_sentiment(bbc_text)
 
 # Bar Plot
 
-barplot(sort(colSums(prop.table(bbc_text[, 1:10]))), 
+barplot(sort(colSums(prop.table(bbc_senti[, 1:10]))), 
         cex.names = 0.7, 
         las = 1, 
-        main = "BBC News Tweet Sentiment Analysis", xlab="Percentage")
+        main = "BBC News Tweet Sentiment Analysis", xlab="Percentage", col = 'darkgoldenrod1')
 
 
 
@@ -378,5 +374,93 @@ barplot(sort(colSums(prop.table(bbc_text[, 1:10]))),
 ## Key Topic Modeling Analysis 
 
 ## For Ministry of Health India
+
+
+library(topicmodels)
+
+# We now export to a format that we can run the topic model with
+
+health_dtm =  convert(health_Dfm, to="topicmodels")
+
+# Estimate LDA with K topics
+
+health_lda = LDA(health_dtm, k = 3, method = "Gibbs", 
+           control = list(verbose=25L, seed = 123, burnin = 100, iter = 500))
+
+
+health_term <- terms(health_lda, 10) ## top 10 topics
+
+health_term
+
+
+
+# *****************************************
+
+
+
+## For The Times of India
+
+# We now export to a format that we can run the topic model with
+
+toi_dtm =  convert(toi_Dfm, to="topicmodels")
+
+# Estimate LDA with K topics
+
+toi_lda = LDA(toi_dtm, k = 3, method = "Gibbs", 
+                 control = list(verbose=25L, seed = 123, burnin = 100, iter = 500))
+
+
+toi_term <- terms(toi_lda, 10) ## top 10 topics
+
+toi_term
+
+
+# ******************************************
+
+
+
+## For CNN News
+
+# We now export to a format that we can run the topic model with
+
+cnn_dtm =  convert(cnn_Dfm, to="topicmodels")
+
+# Estimate LDA with K topics
+
+cnn_lda = LDA(cnn_dtm, k = 3, method = "Gibbs", 
+              control = list(verbose=25L, seed = 123, burnin = 100, iter = 500))
+
+
+cnn_term <- terms(cnn_lda, 10) ## top 10 topics
+
+cnn_term
+
+
+# *******************************************
+
+
+
+## For BBC news
+
+# We now export to a format that we can run the topic model with
+
+bbc_dtm =  convert(bbc_Dfm, to="topicmodels")
+
+# Estimate LDA with K topics
+
+bbc_lda = LDA(bbc_dtm, k = 3, method = "Gibbs", 
+              control = list(verbose=25L, seed = 123, burnin = 100, iter = 500))
+
+
+bbc_term <- terms(bbc_lda, 10) ## top 10 topics
+
+bbc_term
+
+
+
+#############################################################################################
+#############################################################################################
+
+
 
 
