@@ -12,13 +12,13 @@ library(ROAuth)
 library(base64enc)
 library(httr)
 
-api_key = 'sHSKXXlLYAOJhRqETrDuOwi0W'
+api_key = 'XXXXX XXXXX XXXXX'
 
-api_secret = 'azuwJQEumOVYZakdfGyLlmKBXfEMDx4808CxhKeBoaBlYJBa2c'
+api_secret = 'XXXXX XXXXX XXXXX'
 
-access_token = '108908632-Lm0LAjRNb6DdBjwOCklitFqAerX2Vd7Qd4WzLkJD'
+access_token = 'XXXXX XXXXX XXXXX'
 
-access_token_secret = 'PgPwa6q2Wb9tryukoEFCs4KOkHyxU4J6x1pOzLmicG6yM'
+access_token_secret = 'XXXXX XXXXX XXXXX'
 
 
 
@@ -30,10 +30,10 @@ download.file(url = "http://curl.haxx.se/ca/cacert.pem", destfile = "cacert.pem"
 
 ## Setup Twitter 
 
-setup_twitter_oauth('sHSKXXlLYAOJhRqETrDuOwi0W',
-                    'azuwJQEumOVYZakdfGyLlmKBXfEMDx4808CxhKeBoaBlYJBa2c',
-                    '108908632-Lm0LAjRNb6DdBjwOCklitFqAerX2Vd7Qd4WzLkJD',
-                    'PgPwa6q2Wb9tryukoEFCs4KOkHyxU4J6x1pOzLmicG6yM')
+setup_twitter_oauth('XXXXX XXXXX XXXXX',
+                    'XXXXX XXXXX XXXXX',
+                    'XXXXX XXXXX XXXXX',
+                    'XXXXX XXXXX XXXXX')
 
 
 
