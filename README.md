@@ -6,6 +6,10 @@ In this COVID19 twitter study we have conducted NLP and text analysis from vario
 
 - [Objective](#objective)
 - [Data Collection](#data-collection)
+- [Word Cloud](#word-cloud)
+- [Sentimet Analysis](#sentiment-analysis)
+- [Key Topic Modeling](#key-topic-modeling)
+- [Conclusion](#conclusion)
 
 ## Objective
 Objective of the study is to do the analysis on official twitter accounts of Ministry of Health India, The Times of India, CNN Breaking News and BBC Breaking News for trend and sentiment analysis regarding COVID19. 
@@ -13,7 +17,7 @@ Objective of the study is to do the analysis on official twitter accounts of Min
 <br>
 
 #### Note: 
-The Study includes tweets from the day COVID19 declared pandamic by @WHO till 12th April 2020 (a month)
+The Study includes tweets from the day COVID19 declared pandamic by @WHO till 14th April 2020 (a month)
 
 <br>
 
