@@ -8,7 +8,7 @@ In this COVID19 twitter study, we have conducted NLP and text analysis from vari
 - [Data Collection](#data-collection)
 - [Tweet Statistics](#tweet-statisitcs)
 - [Word Cloud](#word-cloud)
-- [Sentimet Analysis](#sentiment-analysis)
+- [Sentiment Analysis](#sentiment-analysis)
 - [Key Topic Modeling](#key-topic-modeling)
 - [Conclusion](#conclusion)
 
@@ -29,13 +29,13 @@ For data collection, we used a Twitter website. We identified targeted official 
 With the help to twitter AIP, we started extracting the tweets from the accounts since = '2020-03-12', until = '2020-04-14'. 
 
 Official Accounts tweets from : 
-1. Ministry Of Health India: @MoHFW_INDIA
+- Ministry Of Health India: @MoHFW_INDIA
 
-2. The Times of India; @timesofindia : India News
+- The Times of India; @timesofindia : India News
 
-3. CNN News: @CNN : The USA News
+- CNN News: @CNN : The USA News
 
-4. BBC News: @BBCNews : UK New
+- BBC News: @BBCNews : UK New
 
 ```
 Health_India = searchTwitter('from:@MoHFW_INDIA', 1000, lang = 'en', 
@@ -84,8 +84,62 @@ We have also observed despite being more than 27 million followers to BBC News, 
 
 ## Word Cloud
 
+For word cloud we used quantda library. Ans after some text cleaning, we found the folllwoing word clouds for individual twitter accounts. 
 
-  
+```
+health_Dfm = dfm(as.character(Health_India$text), keep = c("#*"), 
+            remove = c("amp", "rt", "https", "t.co", "will", "@MoHFW_INDIA", ":", '.', ',', ';', '-', '&','.',
+                       remove_numbers = TRUE, 
+                       remove_punct = TRUE,
+                       stem = TRUE,
+                       remove_symbols = TRUE, stopwords("english")))
+```
+
+### For The Ministry of Health India:
+
+As we can see most of the tweets from The Ministry of Health account were focused on positive and to motivate Indian people 'indiafightscorona'. The second most highlighted word we see is for '@pib_india' this official twitter account of Press Information Bureau  : Info: Press Information Bureau. Nodal agency for communicating to media on behalf of  #Government of #India. This also indicated, all the official updates were passed to the Press Information Bureau via tweets. 
+
+<p align="center"><img width=77% src=https://user-images.githubusercontent.com/44467789/79325508-e7a82100-7f2e-11ea-9141-8e33509821e1.png>
+
+<br>
+
+### For The Times Of India News
+
+As we can see in TOI's tweets, which are more focused on lockdown and cases. However, they also supported homestay during lockdown with hashtag '#cautionyespanicno'.
+
+<p align="center"><img width=77% src=https://user-images.githubusercontent.com/44467789/79325986-bda32e80-7f2f-11ea-8e78-519f07a33c3a.png>
+  
+<br>
+
+### For CNN News
+
+FOr CNN twitter account, new your, coronavirus, along with president trump. By close look, we can also observe that CNN tweets frequently used 'pandemic' and 'died' words. One more observation is that CNN tweets do not carry hashtags! 
+
+
+<p align="center"><img width=77% src=https://user-images.githubusercontent.com/44467789/79326241-25597980-7f30-11ea-9b27-264e34b9db45.png>
+  
+<br>
+
+### FOr BBC news
+
+From the following word cloud, apart from coronavirus, we also observed tweets were also more on PM Boris Johnson. Apart from this BBC also seen running trends like '#tomorrowpapertoday' and '#bbcpapers'. 
+
+<p align="center"><img width=96% src=https://user-images.githubusercontent.com/44467789/79326606-be889000-7f30-11ea-8eed-caad26c0318d.png>
+  
+  
+<br>
+
+Word cloud gives us some hint words tweets trend and sentiment and language. However, for text sentiment analysis we study in detail towards these tweets sent from the individual twitter accounts. 
+
+
+<br>
+
+## Sentiment Anlaysis
+
+
+
+
+
 
 
 
