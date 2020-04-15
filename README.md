@@ -72,15 +72,20 @@ fav_ratio = (favourited_counts/followeres)*100
 ```
 
 Results:
-```
-Names	                     followeres	   retweet_counts	  retweet_ratio	   favourited_counts	 fav_ratio
-Ministry of Health India	 1500000	     104552	          6.970133333	     41478	             2.7652
-Times Of India	           12600000	     38999	          0.309515873	     225661	             1.790960317
-CNN News	                 4.70E+07	     417643	          0.888602128	     1500585	           3.192734043
-BBC News	                 27600000	     159854	          0.579181159	     196202	             0.710876812
-```
+
+<p align="left"><img width=77% src=https://user-images.githubusercontent.com/44467789/79304260-85d7bf00-7f0e-11ea-8c94-84314a3589cc.png>
+  
+
+As we can see in the above table, CNN News is having the highest followers across 4 twitter accounts. However, despite the least followers The Ministry of Health India has the highest retweet ratio with 6.9. That counts @MoHFW_INDIA 's tweets are retweeted and also has a good amount of favorite ratio with 2.76. 
+
+We have also observed despite being more than 27 million followers to BBC News, users are not paying attention to BBC News tweets. 
+
+<br>
+
+## Word Cloud
 
 
+  
 
 
 
