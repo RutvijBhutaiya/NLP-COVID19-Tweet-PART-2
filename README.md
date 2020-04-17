@@ -134,8 +134,62 @@ Word cloud gives us some hint words tweets trend and sentiment and language. How
 
 <br>
 
-## Sentiment Anlaysis
+## Sentiment Analysis
 
+For sentiment analysis, first, we clean the text and applied library(syuzhet) 
+
+```
+#3 Text Cleaning
+
+health_text = gsub("(RT|via)((?:\\b\\w*@\\w+)+)","",Health_India$text)
+health_text = gsub("http[^[:blank:]]+","",health_text)
+health_text = gsub("@\\w+","",health_text)
+health_text = gsub("[[:punct:]]"," ",health_text)
+health_text = gsub("[^[:alnum:]]"," ",health_text)
+
+health_text = as.character(health_text)
+```
+
+Sentiment analysis we analyzed in the bar plot, as follows, 
+
+#### 1. The Health Ministry of India Tweets Sentiment
+
+In the following sentiment bar plot, we can see that positive and trust is more than 20%. However, negativity and fear is still accounting at a 10% level, these levels can be brought down by 7-5%. 
+
+<p align="center"><img width=77% src=https://user-images.githubusercontent.com/44467789/79531107-f574b800-808e-11ea-9961-04fa28feb27b.png>
+  
+<br>
+
+#### 2. The Times of India Tweets Sentiment
+
+In the following sentiment bar plot of TOI we can see that tweets from this account is also spreading the good amount of negativity and fear. However, positive tweets are higher, but, in the crucial times like COVID, media should control on fear and negativity on Twitter. 
+
+<p align="center"><img width=77% src=https://user-images.githubusercontent.com/44467789/79531171-310f8200-808f-11ea-94ee-26cbaaa4e21a.png>
+  
+<br>
+
+3. CNN News Tweets Sentiment
+
+In the following sentiment analysis bar plot, we can see that two big bars represent positivity and trust 
+
+<p align="center"><img width=77% src=https://user-images.githubusercontent.com/44467789/79531222-53a19b00-808f-11ea-97c2-f566d177e6b8.png>
+  
+<br>
+
+4. BBC News Tweets Sentiment
+
+IN the following bar chart we can see that, BBC tweets are higher towards fear and negativity compare to other two media accounts tweets. However, the positive tweets bar is more than 20%. 
+
+<p align="center"><img width=77% src=https://user-images.githubusercontent.com/44467789/79531287-8350a300-808f-11ea-86fb-b0a0a4bf2e3d.png>
+  
+<br>
+
+As we can see analysis of the sentiments of the tweets from individual account tweets, we can say that all the accounts are high on positivity. However, we believe still there is room to follow the right words and bring down negativity and fear in these crucial times. 
+
+
+<br>
+
+## Key Topic Modeling
 
 
 
