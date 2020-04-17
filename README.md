@@ -168,7 +168,7 @@ In the following sentiment bar plot of TOI we can see that tweets from this acco
   
 <br>
 
-3. CNN News Tweets Sentiment
+#### 3. CNN News Tweets Sentiment
 
 In the following sentiment analysis bar plot, we can see that two big bars represent positivity and trust 
 
@@ -176,7 +176,7 @@ In the following sentiment analysis bar plot, we can see that two big bars repre
   
 <br>
 
-4. BBC News Tweets Sentiment
+#### 4. BBC News Tweets Sentiment
 
 IN the following bar chart we can see that, BBC tweets are higher towards fear and negativity compare to other two media accounts tweets. However, the positive tweets bar is more than 20%. 
 
