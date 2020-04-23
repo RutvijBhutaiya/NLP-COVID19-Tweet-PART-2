@@ -191,9 +191,94 @@ As we can see analysis of the sentiments of the tweets from individual account t
 
 ## Key Topic Modeling
 
+FOr topic modeling on tweets from individual accounts, we identified three topics trends from tweets. 
+
+#### 1. The Health Ministry of India Tweets Key Topics 
+
+```
+> health_term
+      Topic 1      Topic 2           Topic 3             
+ [1,] "@pib_india" "#covid19"        "#indiafightscorona"
+ [2,] "states"     "live"            "@pib_india"        
+ [3,] "home"       "media"           "@covidnewsbymib"   
+ [4,] "know"       "#covid2019"      "can"               
+ [5,] "/"          "cases"           "#lockdown21"       
+ [6,] "management" "@drharshvardhan" "updates"           
+ [7,] "help"       "country"         "health"            
+ [8,] "t"          "medical"         "➡"                 
+ [9,] "today"      "briefing"        ")"                 
+[10,] "important"  "india"           "please"  
+```
+
+As we see, the first topic is more inclined towards home, states, and management. The second topic is on COVID and media.  The third topic is on lockdown and health. This analysis tells us how the tweets are focused on from lockdown to health awareness on COVID virus. 
+
+<br>
+
+#### 2. The Times of India Tweets Key Topics 
+
+```
+> toi_term
+      Topic 1                Topic 2    Topic 3             
+ [1,] "cases"                "'"        "read"              
+ [2,] "coronavirus"          "via"      "#cautionyespanicno"
+ [3,] "positive"             "covid-19" "india"             
+ [4,] "#covid19"             "lockdown" "@toisports"        
+ [5,] "("                    "pm"       "people"            
+ [6,] ")"                    "says"     "government"        
+ [7,] "#coronavirusoutbreak" "can"      "april"             
+ [8,] "new"                  "govt"     "pandemic"          
+ [9,] "total"                "masks"    "/"                 
+[10,] "state"                "home"     "till"   
+```
+
+As we can see in TOI media tweets the first topic is towards covid19 cases, the second topic is on lockdown and government actions on states. The third topic is on-trend #cautionyespanicno, which also extends for people and government on covid19 awareness. 
+
+<br>
+
+#### 3. CNN News Tweets Key Topics 
+
+```
+> cnn_term
+      Topic 1    Topic 2     Topic 3      
+ [1,] "new"      "says"      "coronavirus"
+ [2,] "people"   "health"    "president"  
+ [3,] "us"       "one"       "pandemic"   
+ [4,] "said"     "workers"   "trump"      
+ [5,] "gov"      "according" "died"       
+ [6,] "york"     "home"      "dr"         
+ [7,] "state"    "americans" "cases"      
+ [8,] "covid-19" "care"      "world"      
+ [9,] "week"     "time"      "department" 
+[10,] "united"   "order"     "two"     
+```
+
+As we can see on the CNN media topics analysis, unless India Topic 1 and 2 are on people of new york (as NYC registered highest cases) and health workers. Where topic 3 is fully covered with President Donald Trump and World. 
 
 
+<br>
 
+#### 4. BBC News Tweets Key Topics 
+
+```
+> bbc_term
+      Topic 1     Topic 2                 Topic 3       
+ [1,] "?"         "("                     "coronavirus" 
+ [2,] "nhs"       "via"                   "says"        
+ [3,] "hospital"  ")"                     "uk"          
+ [4,] "@bbcsport" "lockdown"              "minister"    
+ [5,] "people"    "care"                  "@bbcpolitics"
+ [6,] "first"     "boris"                 "secretary"   
+ [7,] "us"        "#tomorrowspaperstoday" "prime"       
+ [8,] "staff"     "#bbcpapers"            "@bbcworld"   
+ [9,] "died"      "johnson"               "new"         
+[10,] "/"         "intensive"             "health"    
+```
+
+In the BBC News tweets topics, Topic 1 and 2 are focused on hospitals to people to staff and PM Boris Johnson to care. Topic 3 is focused on coronavirus and news to the UK. 
+
+<br>
+
+## Conclusion
 
 
 
