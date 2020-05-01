@@ -280,6 +280,14 @@ In the BBC News tweets topics, Topic 1 and 2 are focused on hospitals to people 
 
 ## Conclusion
 
+As we studied from the Tweets from the 4 official twitter accounts, one health minister Indian and three media accounts from 12th March 2020 to 14th April 2020. We can conclude the trend based on the study. CNN has the highest ratio of retweets and favoutited_count, which says, CCN has good influence with the highest numbers of followers amongst the three media twitter accounts. 
+
+Based on the Word Cloud, all tweets were focused on coronavirus. Regarding updates on COVID, The Ministry of Health India also putPress Information Bureau (@pib_india) in the loop. 
+
+All the four accounts tweets sentiment were positive; However, The Time of India sentiment analysis says that tweets have less trust than negativity. 
+
+An individual recommendation has been given in a particular section.
 
 
+<br>
 
